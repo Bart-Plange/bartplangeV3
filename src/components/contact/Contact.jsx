@@ -16,8 +16,13 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform actions with formData, such as sending to a server or logging
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', formData); 
+
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   return (
@@ -27,7 +32,7 @@ const Contact = () => {
         <h1 className="text-5xl font-semibold mb-4 tracking-wider">Contact Us</h1>
 
         <form onSubmit={handleSubmit} name="contact" method='post' netlify>
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="contact" value="contact" />
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium">
               Name
