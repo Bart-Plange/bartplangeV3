@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-
+import './hero.css'
 const Hero = () => {
   const rotationContainerRef = useRef(null);
 

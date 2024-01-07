@@ -14,17 +14,14 @@ const Contact = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData); 
-
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+  const copyToClipboard = (text) => {
+  navigator.clipboard.writeText(text).then(() => {
+    alert('Email address copied to clipboard!');
+  }).catch((error) => {
+    console.error('Unable to copy to clipboard', error);
+  });
   };
-
+  
   return (
     <div className='min-h-screen bg-black py-12'>  
     <div className="container mx-auto flex justify-between flex-col lg:flex-row text-white">
@@ -93,14 +90,23 @@ const Contact = () => {
        <div className='md:ml-16 py-8'>
         <div className='mb-5'>
             <p className='text-3xl tracking-wide text-left'>You can also reach me here</p>
-        </div>
+          </div>
+          
         <div className='relative'>
-        <span className='text-lg mail'>bartplangedennis@gmail.com</span>
-        
-        </div>
+        <span className='text-lg text-gray-500 mail' onClick={() => copyToClipboard('bartplangedennis@gmail.com')}>
+          bartplangedennis@gmail.com
+          <span className="tooltip-text text-white">Copy, oops short line</span>
+        </span>
+      </div>
+
+
         <div className='flex align-center text-center gap-8 pt-4'>
-        <img src={Github} alt="Github icon" className='w-12 h-12'/><span>Bart-Plange</span>
-        </div>
+      <a href='https://github.com/Bart-Plange' target='_blank' rel='noopener noreferrer' className='flex align-center justify-center'>
+      <img src={Github} alt="Github icon" className='w-8 h-8'/>
+      <span className='align-center ml-2'>Bart-Plange</span>
+  </a>
+</div>
+
        </div>
     </div>
     </div>

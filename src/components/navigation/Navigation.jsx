@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faCog, faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faFileAlt, faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import gsap from 'gsap';
 import Logo from '../../assets/bartlogo.svg'
 
@@ -53,22 +53,24 @@ const Navigation = () => {
           </div>
           <div className="flex items-center mb-4 pt-5">
              <Link to="/profile" className='flex'>
-             <FontAwesomeIcon icon={faUser} className="text-xl mr-3.5" />
+             <FontAwesomeIcon icon={faUser} className="text-xl mr-3" />
             <span className="text-sm transform -rotate-90">Profile</span>
             </Link>
           </div>
-          <div className="flex items-center mb-4 py-5">
-            <Link to="/settings" className='flex'>
-            <FontAwesomeIcon icon={faCog} className="text-xl mr-2" />
-            <span className="text-sm transform -rotate-90">Settings</span>
-            </Link>
-          </div>
-          <div className="flex items-center">
+          
+          <div className="flex items-center py-5">
             <Link to="/contact" className='flex'>
-            <FontAwesomeIcon icon={faEnvelope} className="text-xl mr-2" />
+            <FontAwesomeIcon icon={faEnvelope} className="text-lg mr-2" />
             <span className="text-sm transform -rotate-90">Contact</span>
             </Link>
           </div>
+
+          <div className="flex items-center mb-4 py-5">
+  <a href="./resume.pdf" download className='flex'>
+    <FontAwesomeIcon icon={faFileAlt} className="text-lg mr-3" />
+    <span className="text-sm transform -rotate-90">Resume</span>
+  </a>
+</div>
         </div>
       </div>
     </div>
