@@ -10,7 +10,7 @@ const Portfolio = () => {
   return (
     <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen py-10">
       <div className="lg:ml-56 m-12 p-12 mx-auto text-white">
-        <div className="flex flex-col lg:flex-row relative">
+        <div className="flex flex-col lg:flex-row relative gap-10">
           {/* left sidebar */}
           <div className="lg:w-1/3 md:w-2/3">
             <div className="sticky top-0">
@@ -19,11 +19,16 @@ const Portfolio = () => {
                   What's more convincing than seeing these sample works. 😊
                 </p>
               </div>
+              <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 p-4 w-1/2 text-center mt-6">
+              <button>
+                More Items
+              </button>
+              </div>
             </div>
           </div>
 
           {/* right sidebar */}
-          <div className="lg:border-l border-t border-full border-gray-100 lg:w-2/3 text-white lg:left-1/3 " >
+          <div className="lg:w-2/3 text-white lg:left-1/3 " >
             <div className=''>
               <div>
                 <img src={Rismos} alt="Rising Star Mockup" className='object-cover mb-6' />
@@ -65,7 +70,7 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-              <div className="scrollbar-cover"></div>
+            
               </div>
             </div>
           </div>

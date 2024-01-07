@@ -31,8 +31,8 @@ const Contact = () => {
       <div className="w-full max-w-md p-6 ">
         <h1 className="text-5xl font-semibold mb-4 tracking-wider">Contact Us</h1>
 
-        <form onSubmit={handleSubmit} name="contact" method='post' netlify>
-          <input type="hidden" name="contact" value="contact" />
+        <form name="contact" method='post' data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium">
               Name
