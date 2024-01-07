@@ -1,0 +1,19 @@
+/* CustomCursor.css */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 1000;
+    background: #fff;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease-out;
+}
+
+.custom-cursor .zoomed{
+    transform: scale3d(1.5);
+}

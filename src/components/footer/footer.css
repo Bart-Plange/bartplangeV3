@@ -1,0 +1,18 @@
+.footer{
+    overflow: hidden;
+}
+.card {
+    height: 80%;
+    width: 100%;
+    padding-top: 8dvb;
+    background-image: linear-gradient(to top, #373641, #1f1f24, #222224, #19191a, #0c0c0c);
+    box-shadow: rgba(0, 0, 0, 0.24) -20px 30px 10px;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(20deg) rotateZ(-10deg);
+    border-radius: 10px;
+    transition: transform 2s;
+}
+
+.card:hover {
+    transform: rotateY(19deg);
+}

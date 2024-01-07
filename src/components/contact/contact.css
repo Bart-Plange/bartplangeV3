@@ -1,0 +1,15 @@
+.mail::after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #000;
+    height: 2px;
+    width: 0;
+    transition: 0.3s linear;
+}
+.mail:hover::after{
+    opacity: 1;
+    width: 68%;
+    border: 1px solid #fff;
+}
