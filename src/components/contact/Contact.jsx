@@ -26,7 +26,7 @@ const Contact = () => {
       <div className="w-full max-w-md p-6 ">
         <h1 className="text-5xl font-semibold mb-4 tracking-wider">Contact Us</h1>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} name="contact" netlify>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium">
               Name
