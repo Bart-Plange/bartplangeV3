@@ -18,14 +18,14 @@ const Work = () => {
             <div className="">
                <div className='flex md:flex-row flex-col-reverse gap-4'>
                 <div className="md:w-1/3 w-full">
-                    <div className='relative mb-4'>
+                    <div className='relative mb-4 overlay'>
                         <img src={Rismos} alt="Rismos mockup" className='object-cover roundedd-3xl'/>
-                        <span className='absolute top-0 left-0 bg-white text-black'>Text Overlay</span>
+                        <span className=''>Text Overlay</span>
                     </div>
 
-                    <div className='relative'>
+                    <div className='relative overlay'>
                         <img src={Bartwebz} alt="Bartwebz mockup" className='object-cover roundedd-3xl'/>
-                        <span className='absolute top-0 left-0 bg-white text-black'>Text Overlay</span>
+                        <span className=''>Text Overlay</span>
                     </div>
                 </div>
 
@@ -37,21 +37,21 @@ const Work = () => {
             <div className='mt-4'>
                 <div className='flex md:flex-row-reverse flex-col gap-4'>
                 <div className="md:w-1/3 w-full">
-                    <div className='relative mb-8'>
-                        <img src={Rismos} alt="Rismos mockup" className='object-cover roundedd-3xl'/>
-                        <span className='absolute top-0 left-0 bg-white text-black'>Text Overlay</span>
+                    <div className='relative mb-8 overlay'>
+                        <img src={Rismos} alt="Rismos mockup" className='object-cover roundedd-3xl '/>
+                        <span className=''>Text Overlay</span>
                     </div>
 
-                    <div className='relative'>
+                    <div className='relative overlay '>
                         <img src={Bartwebz} alt="Bartwebz mockup" className='object-cover roundedd-3xl'/>
-                        <span className='absolute top-0 left-0 bg-white text-black'>Text Overlay</span>
+                        <span className=''>Text Overlay</span>
                     </div>
                 </div>
 
                 <div className="md:w-2/3 w-full">
-                    <div className='relative'>
+                    <div className='relative overlay'>
                         <img src={Bartwebz} alt="Bartwebz mockup" className='object-cover roundedd-3xl'/>
-                        <span className='absolute top-0 left-0 bg-white text-black'>Text Overlay</span>
+                        <span className=''>Text Overlay</span>
                     </div>
                 </div>
                 </div>
