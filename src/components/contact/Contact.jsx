@@ -16,17 +16,17 @@ const Contact = () => {
 
   const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text).then(() => {
-    alert('Email address copied to clipboard!');
+    alert('Address copied to clipboard!');
   }).catch((error) => {
     console.error('Unable to copy to clipboard', error);
   });
   };
   
   return (
-    <div className='min-h-screen bg-black py-12'>  
+    <section className='min-h-screen bg-black py-12 contact' id='contact'>  
     <div className="container mx-auto flex justify-between flex-col lg:flex-row text-white">
-      <div className="w-full max-w-md p-6 ">
-        <h1 className="text-5xl font-semibold mb-4 tracking-wider">Contact Us</h1>
+      <div className="w-full max-w-md p-6 relative">
+        <h1 className="w-1/2 text-5xl font-semibold mb-12 tracking-wider"></h1>
 
         <form name="contact" method='post' data-netlify="true">
           <input type="hidden" name="form-name" value="contact" />
@@ -41,9 +41,11 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               placeholder='Full name, okay it can be short'
+              
               className="w-full p-2 mt-1 text-white border-b bg-transparent focus:outline-none focus:border-orange-500"
               required
-            />
+              />
+              
           </div>
 
           <div className="mb-4">
@@ -95,7 +97,7 @@ const Contact = () => {
         <div className='relative'>
         <span className='text-lg text-gray-500 mail' onClick={() => copyToClipboard('bartplangedennis@gmail.com')}>
           bartplangedennis@gmail.com
-          <span className="tooltip-text text-white">Copy, oops short line</span>
+          <span className="tooltip-text">Copy, oops short line</span>
         </span>
       </div>
 
@@ -104,12 +106,12 @@ const Contact = () => {
       <a href='https://github.com/Bart-Plange' target='_blank' rel='noopener noreferrer' className='flex align-center justify-center'>
       <img src={Github} alt="Github icon" className='w-8 h-8'/>
       <span className='align-center ml-2'>Bart-Plange</span>
-  </a>
-</div>
+        </a>
+      </div>
 
        </div>
     </div>
-    </div>
+  </section>
   );
 };
 

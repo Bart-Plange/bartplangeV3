@@ -18,13 +18,11 @@
     position: absolute;
     top: -100%;
     left: 50%;
-    color: white;
+    color: #865905;
     transform: translateX(-50%);
-    background-color: #706b6b;
-    color: #000;
     padding: 4px 8px;
     font-size: 14px;
-    border: 1px solid #000;
+    border: 1px solid #865905;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
@@ -34,4 +32,18 @@
 .mail:hover .tooltip-text {
     opacity: 1;
     visibility: visible;
+}
+
+
+.contact div>h1::after{
+ content: 'Contact us';
+ position: absolute;
+ left: 17px;
+ top: 10px;
+ width: fit-content;
+ transition: all 5s ease-in;
+}
+
+.contact div>h1:hover::after{
+    content: 'Contact me';
 }

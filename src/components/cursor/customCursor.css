@@ -11,9 +11,9 @@
     z-index: 1000;
     background: #fff;
     mix-blend-mode: difference;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-in;
 }
 
 .custom-cursor .zoomed{
-    transform: scale3d(1.5);
+    transform: scale(1.5);
 }

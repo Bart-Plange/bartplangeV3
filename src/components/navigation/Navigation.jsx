@@ -34,7 +34,7 @@ const Navigation = () => {
       </button>
       {/* logo */}
         <div className="absolute top-0 right-0 p-4 z-10">
-        <img src={Logo} alt="Logo" className="w-16 h-auto" />
+        <img src={Logo} alt="Logo" className="w-12 h-auto" />
       </div>
       {/* Navigation Bar */}
       <div
@@ -44,7 +44,7 @@ const Navigation = () => {
         } transition-transform duration-300 ease-in lg:translate-x-0 lg:h-auto lg:bg-gray-950 rounded-3xl lg:flex lg:items-center lg:z-50`}
       >
         {/* Navigation Items */}
-        <div className="mb-8 lg:mb-0 flex flex-col">
+        <div className="mb-8 lg:mb-0 flex flex-col z-50">
           <div className="flex items-center mb-4">
             <Link to="/" className='flex'>
             <FontAwesomeIcon icon={faHome} className="text-xl mr-2" />
@@ -52,25 +52,25 @@ const Navigation = () => {
             </Link>
           </div>
           <div className="flex items-center mb-4 pt-5">
-             <Link to="/profile" className='flex'>
+             <a href='#about' className='flex'>
              <FontAwesomeIcon icon={faUser} className="text-xl mr-3" />
             <span className="text-sm transform -rotate-90">Profile</span>
-            </Link>
+            </a>
           </div>
           
           <div className="flex items-center py-5">
-            <Link to="/contact" className='flex'>
+            <a href='#contact' className='flex'>
             <FontAwesomeIcon icon={faEnvelope} className="text-lg mr-2" />
             <span className="text-sm transform -rotate-90">Contact</span>
-            </Link>
+            </a>
           </div>
 
           <div className="flex items-center mb-4 py-5">
-  <a href="./resume.pdf" download className='flex'>
-    <FontAwesomeIcon icon={faFileAlt} className="text-lg mr-3" />
-    <span className="text-sm transform -rotate-90">Resume</span>
-  </a>
-</div>
+          <a href="./resume.pdf" download className='flex'>
+            <FontAwesomeIcon icon={faFileAlt} className="text-lg mr-3" />
+            <span className="text-sm transform -rotate-90">Resume</span>
+          </a>
+        </div>
         </div>
       </div>
     </div>

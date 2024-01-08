@@ -1,7 +1,7 @@
 // CustomCursor.jsx
 import { useEffect, useRef } from 'react';
-import './customCursor.css'; // Make sure to import your CSS file
-import cursorImage from '../../assets/mouse.png'; // Update the path accordingly
+import './customCursor.css';
+import cursorImage from '../../assets/mouse.png'; 
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);

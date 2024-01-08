@@ -1,11 +1,12 @@
 // Portfolio.jsx
+import { Link } from 'react-router-dom';
 import Bartwebz from '../../assets/work/bartwebz.png';
 import Manage from '../../assets/work/manage-landing-page.png';
 import Nyametease from '../../assets/work/nyametease.png';
 import Rismos from '../../assets/work/risingstar.png';
 import './portfolio.css';
 
-const Portfolio = () => {
+const Portfolio = (props) => {
 
   return (
     <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen py-10">
@@ -19,21 +20,22 @@ const Portfolio = () => {
                   What's more convincing than seeing these sample works. 😊
                 </p>
               </div>
-              <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 p-4 w-1/2 text-center mt-6">
-              <button>
+              <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 w-1/2 p-4 text-center mt-6">
+              <Link to='/portfolio'>
                 More Items
-              </button>
+              </Link>
               </div>
             </div>
           </div>
 
           {/* right sidebar */}
           <div className="lg:w-2/3 text-white lg:left-1/3 " >
-            <div className=''>
+            <div className='portfolio-images'>
               <div>
-                <img src={Rismos} alt="Rising Star Mockup" className='object-cover mb-6' />
+                <Link to="/case-studies/risingstar">
+                  <img src={Rismos} alt="Rising Star Mockup" className='object-cover mb-6 transform hover:scale-105 transition-all hover:rounded-3xl' />
+                </Link>
                 <div className='flex items-center flex-wrap'>
-
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>Bootstrap</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>JavaScript</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500 '>Frontend Development</span>
@@ -41,7 +43,9 @@ const Portfolio = () => {
               </div>
               {/* nyametease mockup */}
               <div className='py-12'>
-                <img src={Nyametease} alt="Nyametease Mockup" className='object-cover mb-6' />
+                <Link to="/case-studies/nyametease">
+                  <img src={Nyametease} alt="Nyametease Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl' />
+                  </Link>
                 <div className='flex items-center flex-wrap'>
 
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>TailwindCss</span>
@@ -49,11 +53,13 @@ const Portfolio = () => {
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend Development</span>
                 </div>
               </div>
+
               {/* manage mockup */}
               <div className='py-12'>
-                <img src={Manage} alt="Manage Mockup" className='object-cover mb-6' />
+                <Link to="/case-studies/manage">
+                  <img src={Manage} alt="Manage Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl' />
+                </Link>
                 <div className='flex items-center flex-wrap'>
-
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>HTML</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>CSS</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend Development</span>
@@ -61,7 +67,9 @@ const Portfolio = () => {
               </div>
               {/* bartwebz mockup */}
               <div className='py-12'>
-                <img src={Bartwebz} alt="Bartwebz Mockup" className='object-cover mb-6' />
+                <Link to="/case-studies/bartwebz">
+                <img src={Bartwebz} alt="Bartwebz Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl' />
+                </Link>
                 <div className='flex items-center flex-wrap'>
 
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>HTML</span>

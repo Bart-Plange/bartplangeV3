@@ -16,15 +16,15 @@ const Footer = () => {
            </div>
             
             <div className='text-right'>
-                <p className='text-gray-500 text-6xl font-bold tracking-wide leading-loosed'>Crafty & <br /> Creativity</p>
+                <p className='text-gray-500 text-6xl font-bold tracking-wide leading-loosed'>Crafty & <br /> Creative</p>
             </div>
           </div>
           </div>
       </div>
       <div className='lg:ml-64 lg:mr-64 pt-24 px-4 mb-4'>
         <div className='flex justify-between '>
-          <p className='text-white wrap'>designed by: Yours truly</p>
-          <p className='text-white '>copyright@2024</p>
+          <p className='text-white wrap tracking-wide'>designed by: Yours truly</p>
+          <p className='text-white tracking-wide '>copyright@2024</p>
         </div>
       </div>
     </div>;
