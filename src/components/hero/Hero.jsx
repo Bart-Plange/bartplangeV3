@@ -1,5 +1,4 @@
 import './hero.css'
-import Arrow from '../../assets/arrowdown.svg'
 const Hero = () => {
 
   return (
@@ -20,7 +19,6 @@ const Hero = () => {
 
           <div className="absolute top-full left-full tracking-widest animate-bounce flex flex-col">
             <p className='rotate-90'>scroll</p>
-            
           </div>
         </div>
       </div>
