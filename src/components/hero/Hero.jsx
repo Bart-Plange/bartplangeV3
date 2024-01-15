@@ -1,19 +1,6 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import './hero.css'
+import Arrow from '../../assets/arrowdown.svg'
 const Hero = () => {
-  const rotationContainerRef = useRef(null);
-
-  useEffect(() => {
-    const rotationContainer = rotationContainerRef.current;
-
-    gsap.to(rotationContainer, {
-      rotation: 360,  
-      repeat: -1,     
-      duration: 10,   
-      ease: 'linear', 
-    });
-  }, []);
 
   return (
     <section className="bg-black">
@@ -31,10 +18,9 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute top-full left-2/3 transform-translate-x-1/2 -translate-y-1/2 tracking-widest" ref={rotationContainerRef}>
-            <p>scroll here</p>
-            <p>scroll here</p>
-            <p>scroll here</p>
+          <div className="absolute top-full left-full tracking-widest animate-bounce flex flex-col">
+            <p className='rotate-90'>scroll</p>
+            
           </div>
         </div>
       </div>

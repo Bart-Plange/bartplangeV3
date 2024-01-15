@@ -2,7 +2,7 @@ import './work.css'
 import { Link } from 'react-router-dom'
 import Rismos from '../../assets/work/risingstar.png'
 import Bartwebz from '../../assets/work/bartwebz.png'
-import Manage from '../../assets/work/manage-landing-page.png'
+import Eben1 from '../../assets/work/eben1.png'
 import Nyametease from '../../assets/work/nyametease.png'
 import Carousel from './Carousel'
 

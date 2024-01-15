@@ -52,7 +52,7 @@ const About = () => {
       </section>
     
       {/* section 2 */}
-      <section className='bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen relative z-20' id='about'>
+      <section className='bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen z-20 sticky top-0' id='about'>
         <div className='container mx-auto'>
           <div className="flex py-24 flex-col lg:flex-row">
             <div
@@ -60,8 +60,6 @@ const About = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <span className='text-white'>Yeah, thats me 😊.</span>
-              <span className='text-white'> Hover me</span>
               <img
                 ref={imageRef}
                 src={Bart}

@@ -1,12 +1,12 @@
 // Portfolio.jsx
 import { Link } from 'react-router-dom';
-import Bartwebz from '../../assets/work/bartwebz.png';
-import Manage from '../../assets/work/manage-landing-page.png';
+import Eben1 from '../../assets/work/eben1.png';
 import Nyametease from '../../assets/work/nyametease.png';
-import Rismos from '../../assets/work/risingstar.png';
+import Finalyear from '../../assets/work/finalyear.png'
+import Startup from '../../assets/work/startup.png'
 import './portfolio.css';
 
-const Portfolio = (props) => {
+const Portfolio = () => {
 
   return (
     <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen py-10">
@@ -33,7 +33,7 @@ const Portfolio = (props) => {
             <div className='portfolio-images'>
               <div>
                 <Link to="/case-studies/risingstar">
-                  <img src={Rismos} alt="Rising Star Mockup" className='object-cover mb-6 transform hover:scale-105 transition-all hover:rounded-3xl' />
+                  <img src={Startup} alt="Rising Star Mockup" className='object-cover mb-6 transform hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
                 </Link>
                 <div className='flex items-center flex-wrap'>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>Bootstrap</span>
@@ -44,7 +44,7 @@ const Portfolio = (props) => {
               {/* nyametease mockup */}
               <div className='py-12'>
                 <Link to="/case-studies/nyametease">
-                  <img src={Nyametease} alt="Nyametease Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl' />
+                  <img src={Nyametease} alt="Nyametease Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
                   </Link>
                 <div className='flex items-center flex-wrap'>
 
@@ -57,7 +57,7 @@ const Portfolio = (props) => {
               {/* manage mockup */}
               <div className='py-12'>
                 <Link to="/case-studies/manage">
-                  <img src={Manage} alt="Manage Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl' />
+                  <img src={Eben1} alt="Manage Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
                 </Link>
                 <div className='flex items-center flex-wrap'>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>HTML</span>
@@ -68,7 +68,7 @@ const Portfolio = (props) => {
               {/* bartwebz mockup */}
               <div className='py-12'>
                 <Link to="/case-studies/bartwebz">
-                <img src={Bartwebz} alt="Bartwebz Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl' />
+                <img src={Finalyear} alt="Eben Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
                 </Link>
                 <div className='flex items-center flex-wrap'>
 

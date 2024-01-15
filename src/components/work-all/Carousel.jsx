@@ -1,11 +1,9 @@
-// YourComponent.jsx
-import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Rismos from '../../assets/work/risingstar.png'
 import Bartwebz from '../../assets/work/bartwebz.png'
-import Manage from '../../assets/work/manage-landing-page.png'
+import Manage from '../../assets/work/eben1.png'
 import Nyametease from '../../assets/work/nyametease.png'
 
 const Carousel = () => {
