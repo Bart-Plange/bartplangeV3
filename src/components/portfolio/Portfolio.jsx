@@ -32,9 +32,9 @@ const Portfolio = () => {
           <div className="lg:w-2/3 text-white lg:left-1/3 " >
             <div className='portfolio-images'>
               <div>
-                <Link to="/case-studies/risingstar">
+                <a href='https://risingstarmontessori.netlify.app/' target="_blank" rel="noreferrer">
                   <img src={Startup} alt="Rising Star Mockup" className='object-cover mb-6 transform hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
-                </Link>
+                </a>
                 <div className='flex items-center flex-wrap'>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>Bootstrap</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>JavaScript</span>
@@ -43,38 +43,41 @@ const Portfolio = () => {
               </div>
               {/* nyametease mockup */}
               <div className='py-12'>
-                <Link to="/case-studies/nyametease">
+                <a href='https://nyametease.netlify.app/' target="_blank" rel="noreferrer">
                   <img src={Nyametease} alt="Nyametease Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
-                  </Link>
+                  </a>
                 <div className='flex items-center flex-wrap'>
 
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>TailwindCss</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>JavaScript</span>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend Development</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend</span>
                 </div>
               </div>
 
               {/* manage mockup */}
               <div className='py-12'>
-                <Link to="/case-studies/manage">
+                <a href='' target="_blank" rel="noreferrer">
                   <img src={Eben1} alt="Manage Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
-                </Link>
+                </a>
                 <div className='flex items-center flex-wrap'>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>HTML</span>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>CSS</span>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend Development</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Tailwind</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Backend</span>
                 </div>
               </div>
               {/* bartwebz mockup */}
               <div className='py-12'>
-                <Link to="/case-studies/bartwebz">
+                <a href='https://mrgarageauto.netlify.app/' target="_blank" rel="noreferrer">
                 <img src={Finalyear} alt="Eben Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
-                </Link>
+                </a>
                 <div className='flex items-center flex-wrap'>
 
                 <span className='border p-2 m-2 border-gray-500 text-gray-500'>HTML</span>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>CSS</span>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend Development</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Nodejs</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>React</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Frontend</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Backend</span>
                 </div>
               </div>
             </div>
