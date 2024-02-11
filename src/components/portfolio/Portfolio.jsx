@@ -9,7 +9,7 @@ import './portfolio.css';
 const Portfolio = () => {
 
   return (
-    <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen py-10">
+    <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen py-10" id='projects'>
       <div className="lg:ml-56 m-12 p-12 mx-auto text-white">
         <div className="flex flex-col lg:flex-row relative gap-10">
           {/* left sidebar */}
@@ -56,7 +56,7 @@ const Portfolio = () => {
 
               {/* manage mockup */}
               <div className='py-12'>
-                <a href='' target="_blank" rel="noreferrer">
+                <a href='#' target="_blank" rel="noreferrer">
                   <img src={Eben1} alt="Manage Mockup" className='object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
                 </a>
                 <div className='flex items-center flex-wrap'>

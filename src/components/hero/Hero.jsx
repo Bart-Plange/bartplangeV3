@@ -17,7 +17,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute top-full left-full tracking-widest animate-bounce flex flex-col">
+          <div className="absolute top-full left-full tracking-widest animate-bounce md:flex flex-col hidden">
             <p className='rotate-90'>scroll</p>
           </div>
         </div>

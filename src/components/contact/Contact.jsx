@@ -26,11 +26,11 @@ const Contact = () => {
     <section className='min-h-screen bg-black py-12 contact ' id='contact' >  
     <div className="container mx-auto flex justify-between flex-col lg:flex-row text-white">
       <div className="w-full max-w-md p-6 relative">
-        <h1 className="w-1/2 text-5xl font-semibold mb-12 tracking-wider"></h1>
+        <h1 className="text-5xl font-semibold mb-12 tracking-wider"></h1>
 
-        <form name="contact" method='post' data-netlify="true">
+        <form name="contact" method='post' data-netlify="true" >
           <input type="hidden" name="form-name" value="contact" />
-          <div className="mb-4">
+          <div className="mb-4 pt-6">
             <label htmlFor="name" className="block text-sm font-medium">
               Name
             </label>

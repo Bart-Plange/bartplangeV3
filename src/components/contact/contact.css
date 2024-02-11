@@ -39,7 +39,7 @@
  content: 'Contact us';
  position: absolute;
  left: 17px;
- top: 10px;
+ top: -20px;
  width: fit-content;
  transition: all 5s ease-in;
 }
