@@ -9,7 +9,7 @@ const ScrollProvider = ({ children }) => {
       easing: (t) => Math.sin((t * Math.PI)/2),
       direction: 'vertical',
       gestureDirection: 'both',
-      smoothTouch: true,
+      smoothTouch: false,
     });
 
     const raf = (time) => {
