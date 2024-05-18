@@ -6,9 +6,9 @@ const Hero = () => {
       <div className="container mx-auto min-h-screen">
         <div className="text-white relative ">
           <div className="flex justify-between">
-            <div className="mt-16 pt-16 md:mt-18 md:pt-24 lg:w-2/4 w-full">
+            <div className="mt-16 pt-16 md:mt-18 md:pt-24 lg:w-3/4 w-full">
               <p className="text-xl tracking-wide">hi, I am</p>
-              <h1 className="py-4 text-5xl font-bold md:text-6xl tracking-wider">Dennis Bart-Plange</h1>
+              <h1 className="py-4 text-5xl font-bold md:text-8xl tracking-wider">Dennis Bart-Plange</h1>
               <h2 className="text-xl tracking-wide">Web developer and designer</h2>
             </div>
 
