@@ -48,7 +48,7 @@ const About = () => {
           </div>
 
           <div className='hidden mt-20 lg:block'>
-            <p className='text-9xl font-bold tracking-wider'>From <span className='lg:px-2 border-b text-orange-500'>concepts</span>to <span className='border-b text-orange-500'>clicks</span></p>
+            <p className='text-9xl font-bold tracking-wider'>From <span className='lg:px-2 border-b bg-gradient-to-tr text-transparent bg-clip-text from-orange-600 via-orange-900 to-slate-950'>concepts</span>to <span className='border-b bg-gradient-to-tr text-transparent bg-clip-text from-orange-600 via-orange-900 to-slate-950'>clicks</span></p>
           </div>
 
           <div className='pt-8 '>

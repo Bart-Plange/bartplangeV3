@@ -72,9 +72,9 @@ const Navigation = () => {
               <FontAwesomeIcon icon={faHome} className="mr-2" />
               Home
             </Link>
-            <Link to="/profile" className="mb-4 text-md">
+            <Link to="/portfolio" className="mb-4 text-md">
               <FontAwesomeIcon icon={faUser} className="mr-2" />
-              Profile
+              Work
             </Link>
             <a href="./resume.pdf" download className="mb-4 text-md">
               <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
@@ -98,9 +98,9 @@ const Navigation = () => {
                 Home</a>
             </li>
             <li>
-              <a href="/profile" className="text-white block px-2 py-1">
+              <a href="/porfolio" className="text-white block px-2 py-1">
                 <FontAwesomeIcon icon={faUser} className="mr-2" />
-                Profile</a>
+                Work</a>
             </li>
             <li>
               <a href="/resume.pdf" download className="text-white block px-2 py-1">

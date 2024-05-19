@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="bg-black">
       <div className="container mx-auto min-h-screen">
         <div className="text-white relative ">
-          <div className="flex justify-between">
+          <div className="flex justify-between z-10">
             <div className="mt-16 pt-16 md:mt-18 md:pt-24 lg:w-3/4 w-full">
               <p className="text-xl tracking-wide">hi, I am</p>
               <h1 className="py-4 text-5xl font-bold md:text-8xl tracking-wider">Dennis Bart-Plange</h1>
@@ -17,9 +17,30 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="absolute top-full left-full tracking-widest animate-bounce md:flex flex-col hidden">
-            <p className='rotate-90'>scroll</p>
+          <div className='absolute top-1/2 left-1/3 z-0'>
+          <div className="spiral-container">
+          <div className="spiral"></div>
+          <div className="spiral"></div>
+          <div className="spiral"></div>
           </div>
+          </div>
+
+          <div className='absolute top-10 left-1/3 z-0'>
+          <div className="spiral-container">
+          <div className="spiral"></div>
+          <div className="spiral"></div>
+          <div className="spiral"></div>
+          </div>
+          </div>
+
+          <div className='absolute top-12 left-2/3 z-0'>
+          <div className="spiral-container">
+          <div className="spiral"></div>
+          <div className="spiral"></div>
+          <div className="spiral"></div>
+          </div>
+          </div>
+
         </div>
       </div>
     </section>
