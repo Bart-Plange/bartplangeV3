@@ -76,7 +76,7 @@ const Navigation = () => {
               <FontAwesomeIcon icon={faUser} className="mr-2" />
               Work
             </Link>
-            <a href="./resume.pdf" download className="mb-4 text-md">
+            <a href="./Dennis_Bart-Plange_resume.pdf" download className="mb-4 text-md">
               <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
               Resume
             </a>
@@ -103,7 +103,7 @@ const Navigation = () => {
                 Work</a>
             </li>
             <li>
-              <a href="/resume.pdf" download className="text-white block px-2 py-1">
+              <a href="./Dennis_Bart-Plange_resume.pdf" download className="text-white block px-2 py-1">
                 <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
                 Resume</a>
             </li>

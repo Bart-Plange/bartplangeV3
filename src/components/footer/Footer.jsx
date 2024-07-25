@@ -10,10 +10,10 @@ const Footer = () => {
            </div>
            
            <div className='flex flex-col gap-y-1 mt-12 p-2 w-full font-bold text-2xl text-gray-500'>
-            <span className='text-8xl pb-4'>Now is the time</span>
+            <span className='lg:text-8xl pb-4 text-4xl '>Let's build something</span>
             <span className='pr-4 p-2 rounded-br-full text-lg md:text-2xl text-orange-500'>bartplangedennis@gmail.com</span>
            </div>
-           </div>
+           </div> 
             
             <div className='text-right'>
                 <p className='text-gray-500 text-6xl font-bold tracking-wide leading-loosed'>Crafty & <br /> Creative</p>

@@ -90,7 +90,7 @@ const About = () => {
 
                 <div className='flex align-center '>
                 <div className='bg-orange-500 w-3 h-3 rounded-full mt-2 mr-2'></div>
-                <span>Tkinter</span> 
+                <span>HTML</span> 
                 </div>
                 <div className='flex align-center '>
                 <div className='bg-orange-500 w-3 h-3 rounded-full mt-2 mr-2'></div>

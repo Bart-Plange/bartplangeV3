@@ -22,7 +22,7 @@ const Contact = () => {
     }).catch((error) => {
       console.error('Unable to copy to clipboard', error);
     });
-  };
+  }; 
 
   return (
     <section className='min-h-screen bg-black py-12 contact ' id='contact' >
