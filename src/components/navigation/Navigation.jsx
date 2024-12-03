@@ -88,35 +88,8 @@ const Navigation = () => {
         </div>
       )}
 
-      {/* Mobile Navigation */}
-      {isMobileView && (
-        <nav ref={mobileMenuRef} className="bg-gray-800 p-4 pt-12 overflow-hidden">
-          <ul className="flex flex-col space-y-2 pt-4 pl-10">
-            <li>
-              <a href="/" className="text-white block px-2 py-1">
-                <FontAwesomeIcon icon={faHome} className="mr-2" />
-                Home</a>
-            </li>
-            <li>
-              <a href="/porfolio" className="text-white block px-2 py-1">
-                <FontAwesomeIcon icon={faUser} className="mr-2" />
-                Work</a>
-            </li>
-            <li>
-              <a href="./Dennis_Bart-Plange_resume.pdf" download className="text-white block px-2 py-1">
-                <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
-                Resume</a>
-            </li>
-            <li>
-              <a href="#contact" className="text-white block px-2 py-1">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-              Contact</a>
-            </li>
-          </ul>
-        </nav>
-      )}
-    </div>
-  );
+  </div>
+);
 };
 
 export default Navigation;

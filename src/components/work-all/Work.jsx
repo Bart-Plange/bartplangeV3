@@ -1,64 +1,57 @@
-import './work.css'
-import { Link } from 'react-router-dom'
-import Rismos from '../../assets/work/risingstar.png'
-import Bartwebz from '../../assets/work/bartwebz.png'
-import Eben1 from '../../assets/work/eben1.png'
-import Nyametease from '../../assets/work/nyametease.png'
-import Carousel from './Carousel'
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
+const WorkSection = () => {
+  const sectionRef = useRef(null);
 
-const Work = () => {
-    return <section className="bg-black min-h-screen">
-        <div className="container mx-auto">
-            <div className='py-3 mb-4 w-1/3 text-center  sticky top-0 z-10'>
-                <Link to="/" >
-                <p className='bg-white text-black py-3'>Return Home</p>
-                </Link>
+  useEffect(() => {
+    gsap.fromTo(
+      '.work-item',
+      { opacity: 0, scale: 0.9 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'elastic.out(1, 0.5)',
+      }
+    );
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="work-section bg-gray-100 py-12">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
+          My Work
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {/* Example Work Item */}
+          <div className="work-item bg-white shadow-lg rounded-lg overflow-hidden">
+            <img
+              src="work-image1.jpg"
+              alt="Work 1"
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-medium text-gray-800">
+                Project Title
+              </h3>
+              <p className="text-gray-600 mt-2">
+                Brief description of the project.
+              </p>
+              <a
+                href="#"
+                className="mt-4 inline-block text-orange-500 hover:text-orange-600"
+              >
+                View Project
+              </a>
             </div>
-            <div className="">
-               <div className='flex md:flex-row flex-col-reverse gap-4'>
-                <div className="md:w-1/3 w-full">
-                    <div className='relative mb-4 overlay'>
-                        <img src={Rismos} alt="Rismos mockup" className='object-cover roundedd-3xl'/>
-                        <span className=''>Text Overlay</span>
-                    </div>
-
-                    <div className='relative overlay'>
-                        <img src={Bartwebz} alt="Bartwebz mockup" className='object-cover roundedd-3xl'/>
-                        <span className=''>Text Overlay</span>
-                    </div>
-                </div>
-
-                <div className="md:w-2/3 w-full">
-                    <Carousel />
-                </div>
-                </div>
-
-            <div className='mt-4'>
-                <div className='flex md:flex-row-reverse flex-col gap-4'>
-                <div className="md:w-1/3 w-full">
-                    <div className='relative mb-8 overlay'>
-                        <img src={Rismos} alt="Rismos mockup" className='object-cover roundedd-3xl '/>
-                        <span className=''>Text Overlay</span>
-                    </div>
-
-                    <div className='relative overlay '>
-                        <img src={Bartwebz} alt="Bartwebz mockup" className='object-cover roundedd-3xl'/>
-                        <span className=''>Text Overlay</span>
-                    </div>
-                </div>
-
-                <div className="md:w-2/3 w-full">
-                    <div className='relative overlay'>
-                        <img src={Bartwebz} alt="Bartwebz mockup" className='object-cover roundedd-3xl'/>
-                        <span className=''>Text Overlay</span>
-                    </div>
-                </div>
-                </div>
-                </div>
-            </div>
-        </div>    
-    </section>;
+          </div>
+          {/* Add more work items as needed */}
+        </div>
+      </div>
+    </section>
+  );
 };
 
-export default Work;
+export default WorkSection;

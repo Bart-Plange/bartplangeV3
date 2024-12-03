@@ -17,7 +17,7 @@
   
   .parallax-layer {
     position: absolute;
-    background: linear-gradient(45deg, darkgray, orange);
+    background: linear-gradient(45deg, rgb(40, 40, 40), rgb(2, 1, 26));
     opacity: 0.7;
     border-radius: 50%;
     mix-blend-mode: screen;
