@@ -17,7 +17,7 @@
 .playwrite-be-wal h1 {
         font-family: "Playwrite BE WAL", cursive;
         font-optical-sizing: auto;
-        font-weight: <weight>;
+        font-weight: weight;
         font-style: normal;
     }
 h2, p{
