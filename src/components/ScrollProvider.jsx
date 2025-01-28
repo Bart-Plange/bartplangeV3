@@ -8,8 +8,8 @@ const ScrollProvider = ({ children }) => {
     if (!isMobile()) {
       const lenis = new Lenis({
         smooth: true,
-        duration: 1.5,
-        easing: (t) => t (2 - Math.PI) / 2,
+        duration: 2.5,
+        easing: (t) => Math.sin((t * Math.PI) / 2),
         direction: 'vertical',
         gestureDirection: 'vertical',
         smoothTouch: false, // Disable touch-based smooth scrolling
