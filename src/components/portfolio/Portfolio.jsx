@@ -1,8 +1,8 @@
 import { useState } from 'react';
 // import { Link } from 'react-router-dom';
-// import Eben1 from '../../assets/work/eben1.png';
+import Eben1 from '../../assets/work/eben1.png';
 import Nyametease from '../../assets/work/nyametease.png';
-// import Finalyear from '../../assets/work/finalyear.png';
+import Finalyear from '../../assets/work/finalyear.png';
 import Startup from '../../assets/work/startup.png';
 import './portfolio.css';
 
@@ -45,6 +45,7 @@ const Portfolio = () => {
           {/* Right Sidebar */}
           <div className="lg:w-2/3 text-white lg:left-1/3">
             <div className="portfolio-images">
+              {/* Startup mockup */}
               <div>
                 <a href="https://homefinder-fyp.netlify.app/" target="_blank" rel="noreferrer">
                   <img
@@ -81,8 +82,40 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              {/* Additional mockups */}
-              {/* Add other project sections here */}
+              {/* Eben mockup */}
+              <div className="py-12">
+                <a href="#" target="_blank" rel="noreferrer">
+                  <img
+                    src={Eben1}
+                    alt="Manage Mockup"
+                    className="object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full"
+                  />
+                </a>
+                <div className="flex items-center flex-wrap">
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">HTML</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">Tailwind</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">Frontend</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">Backend</span>
+                </div>
+              </div>
+
+              {/* Final year mockup */}
+              <div className="py-12">
+                <a href="https://mrgarageauto.netlify.app/" target="_blank" rel="noreferrer">
+                  <img
+                    src={Finalyear}
+                    alt="Eben Mockup"
+                    className="object-cover mb-6 hover:scale-105 transition-all hover:rounded-3xl h-full w-full"
+                  />
+                </a>
+                <div className="flex items-center flex-wrap">
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">HTML</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">Node.js</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">React</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">Frontend</span>
+                  <span className="border p-2 m-2 border-gray-500 text-gray-500">Backend</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
