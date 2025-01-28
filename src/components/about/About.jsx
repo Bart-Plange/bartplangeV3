@@ -76,8 +76,8 @@ const About = () => {
               />
             </div>
             <div className='text-white lg:w-2/3 tracking-wider lg:ml-16 text-lg mt-10'>
-              <p className="">Hi, I'm Dennis Bart-Plange, and I am a <span className='text-green-500'>software developer.</span></p>
-              <p className="py-4">I have been an <span className='text-green-500'>Administrator</span> and <span className='text-green-500'>Department Head.</span></p>
+              <p className="">Hi, I'm Dennis Bart-Plange, and I am a <span className='text-orange-500'>software developer.</span></p>
+              <p className="py-4">I have been an <span className='text-orange-500'>Administrator</span> and <span className='text-orange-500'>Department Head.</span></p>
               <p className="">Additionally, I have worked as an IT specialist and taught in different schools and campuses for over 6 years.</p>
               <p className="py-4">Furthermore, I have created multiple software programs and websites and established a personal portfolio.</p>
 
