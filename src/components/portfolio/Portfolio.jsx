@@ -32,13 +32,14 @@ const Portfolio = () => {
           <div className="lg:w-2/3 text-white lg:left-1/3 " >
             <div className='portfolio-images'>
               <div>
-                <a href='https://risingstarmontessori.netlify.app/' target="_blank" rel="noreferrer">
+                <a href='https://homefinder-fyp.netlify.app/' target="_blank" rel="noreferrer">
                   <img src={Startup} alt="Rising Star Mockup" className='object-cover mb-6 transform hover:scale-105 transition-all hover:rounded-3xl h-full w-full' />
                 </a>
                 <div className='flex items-center flex-wrap'>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Bootstrap</span>
-                <span className='border p-2 m-2 border-gray-500 text-gray-500'>JavaScript</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>React</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500'>Tailwind</span>
                 <span className='border p-2 m-2 border-gray-500 text-gray-500 '>Frontend Development</span>
+                <span className='border p-2 m-2 border-gray-500 text-gray-500 '>Backend Development</span>
                 </div>
               </div>
               {/* nyametease mockup */}
