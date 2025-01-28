@@ -9,7 +9,7 @@ import './portfolio.css';
 const Portfolio = () => {
 
   return (
-    <div className="bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen py-1" id='projects'>
+    <div className="bg-gray-900 min-h-screen py-1" id='projects'>
       <div className="lg:ml-56 m-12 p-12 mx-auto text-white">
         <div className="flex flex-col lg:flex-row relative gap-10">
           {/* left sidebar */}

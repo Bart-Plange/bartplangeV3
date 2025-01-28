@@ -31,7 +31,7 @@ const About = () => {
   return (
     <div>
       {/* section 1 */}
-      <section className='bg-black min-h-screen sticky top-0 z-10'>
+      <section className='bg-gray-900 min-h-screen sticky top-0 z-10'>
         <div className="container mx-auto text-white pt-24">
           <div className="wrapper">
             <div className="circle"></div>
@@ -60,7 +60,7 @@ const About = () => {
       </section>
 
       {/* section 2 */}
-      <section className='bg-gradient-to-tr from-gray-800 via-gray-900 to-gray-950 min-h-screen z-20 sticky top-0' id='about'>
+      <section className='bg-gray-900 min-h-screen z-20 sticky top-0' id='about'>
         <div className='container mx-auto'>
           <div className="flex py-24 flex-col lg:flex-row">
             <div

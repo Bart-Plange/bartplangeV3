@@ -25,7 +25,7 @@ const Contact = () => {
   }; 
 
   return (
-    <section className='min-h-screen bg-black py-12 contact ' id='contact' >
+    <section className='min-h-screen bg-gray-900 py-12 contact ' id='contact' >
       <div className="container mx-auto flex justify-between flex-col lg:flex-row text-white">
         <div className="w-full p-6 relative">
           <h2 className="md:text-6xl text-4xl text-gray-300 font-semibold mb-8 tracking-widest">You are a message away from - <span className='bg-gradient-to-tr text-transparent bg-clip-text from-orange-600 via-orange-900 to-slate-950'>your ideas made possible</span></h2>

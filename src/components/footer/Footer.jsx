@@ -1,6 +1,6 @@
 import './footer.css'
 const Footer = () => {
-    return <div className=" bg-gray-900 pt-8 footer ">
+    return <div className=" bg-gray-950 pt-8 footer ">
       <div className="container max-auto py-12 ">
         <div>
           <div className='flex md:flex-row flex-col justify-between'> 
