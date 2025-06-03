@@ -1,9 +1,8 @@
-import {Work, CustomCursor } from "../components";
+import {Work } from "../components";
 
 const PortfolioPage = () => {
     return (
-        <section >
-            <CustomCursor />   
+        <section >  
             <Work />
         </section>
     )

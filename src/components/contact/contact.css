@@ -1,1 +1,167 @@
+/* contact.css */
+.contact-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  position: relative;
+  overflow: hidden;
+}
 
+.bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  z-index: 0;
+}
+
+.gradient-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.sphere-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0c4a6e 100%);
+  top: 10%;
+  left: -10%;
+  animation: float 15s ease-in-out infinite;
+}
+
+.sphere-2 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #4c1d95 100%);
+  bottom: -20%;
+  right: -10%;
+  animation: float 18s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(-15px, 15px);
+  }
+  75% {
+    transform: translate(-20px, -10px);
+  }
+}
+
+.contact-form-container, .contact-info > div {
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-container:hover, .contact-info > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(30, 41, 59, 0.4);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.copy-indicator {
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-card:hover .copy-indicator {
+  opacity: 1;
+}
+
+.submit-button {
+  background: linear-gradient(90deg, #0891b2 0%, #0ea5e9 100%);
+  background-size: 200% 200%;
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: gradient-animation 4s ease infinite;
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(8, 145, 178, 0.6);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gradient-sphere {
+    display: none;
+  }
+  
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .copy-indicator {
+    margin-left: 0;
+    margin-top: 8px;
+    opacity: 1;
+  }
+}

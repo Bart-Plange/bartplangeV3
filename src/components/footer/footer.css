@@ -1,0 +1,136 @@
+/* Footer.css */
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 90%);
+  z-index: 0;
+}
+
+.glowing-dot {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.dot-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0c4a6e 100%);
+  top: -100px;
+  left: -100px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.dot-2 {
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #4c1d95 100%);
+  bottom: -200px;
+  right: -200px;
+  animation: float 25s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(-15px, 15px);
+  }
+  75% {
+    transform: translate(-20px, -10px);
+  }
+}
+
+.logo-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.logo-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.logo-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.email-link {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 0 20px rgba(8, 145, 178, 0.4);
+  transform: translateY(-3px);
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .tagline {
+    margin-top: 40px;
+  }
+  
+  .logo-container {
+    margin: 0 auto 30px;
+  }
+  
+  .email-link {
+    text-align: center;
+  }
+}

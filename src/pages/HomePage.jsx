@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { About, Contact, CustomCursor, Footer, Hero, Layout, Portfolio } from "../components";
+import { About, Contact, Footer, Hero, Layout, Portfolio } from "../components";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +47,6 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <CustomCursor />
       <Hero ref={heroRef} />
       <Portfolio ref={portfolioRef} />
       <About ref={aboutRef} />

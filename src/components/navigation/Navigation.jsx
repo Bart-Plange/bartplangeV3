@@ -1,122 +1,222 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faFileAlt, faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import gsap from 'gsap';
+import { 
+  faHome, 
+  faUser, 
+  faFileAlt, 
+  faEnvelope, 
+  faBars, 
+  faTimes,
+  faBriefcase,
+  faCode,
+  faLightbulb
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Logo from '../../assets/bartlogo.svg';
+import './navigation.css';
 
 const Navigation = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
   const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 1024);
-
-  // Update isMobileView on window resize
+  
+  // Handle outside clicks to close menu
   useEffect(() => {
-    const handleResize = () => setIsMobileView(window.innerWidth < 1024);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
-  // Initial GSAP animation for desktop menu
+  // Close menu on route change
   useEffect(() => {
-    gsap.fromTo(navRef.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1, delay: 0.5 });
+    setMenuOpen(false);
+  }, [activeLink]);
+
+  // Set active link based on current route
+  useEffect(() => {
+    setActiveLink(window.location.pathname);
   }, []);
-
-  // GSAP animation for mobile menu
-  useEffect(() => {
-    gsap.to(mobileMenuRef.current, {
-      height: isMobileMenuOpen ? 'auto' : 0,
-      opacity: isMobileMenuOpen ? 1 : 0,
-      duration: 0.3,
-      ease: 'power3.inOut',
-    });
-  }, [isMobileMenuOpen]);
-
-  const openMobileMenu = () => setMobileMenuOpen(true);
-  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <div>
-      {/* Mobile Menu Toggle Button */}
-      {isMobileView && !isMobileMenuOpen && (
-        <button
-          className="fixed top-4 left-4 z-50 bg-white rounded-full p-1.5 text-black focus:outline-none lg:hidden"
-          onClick={openMobileMenu}
-        >
-          <FontAwesomeIcon icon={faBars} className="text-2xl" />
-        </button>
-      )}
-      {isMobileView && isMobileMenuOpen && (
-        <button
-          className="fixed top-4 left-4 z-50 bg-white rounded-full p-2 px-3 text-black focus:outline-none lg:hidden"
-          onClick={closeMobileMenu}
-        >
-          <FontAwesomeIcon icon={faTimes} className="text-2xl" />
-        </button>
-      )}
-      {/* Logo */}
-      <div className="absolute top-0 right-0 p-4 z-10">
-        <img src={Logo} alt="Logo" className="w-12 h-auto" />
-      </div>
+    <>
+      {/* Floating Menu Toggle */}
+      <button 
+        className={`fixed z-50 top-6 left-6 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+          isMenuOpen 
+            ? 'bg-transparent text-white' 
+            : 'bg-white/10 backdrop-blur-sm text-white hover:bg-cyan-500'
+        }`}
+        onClick={() => setMenuOpen(!isMenuOpen)}
+      >
+        <FontAwesomeIcon 
+          icon={isMenuOpen ? faTimes : faBars} 
+          className="text-xl" 
+        />
+      </button>
 
-      {/* Desktop Menu */}
-      {!isMobileView && (
-        <div
-          ref={navRef}
-          className="fixed top-64 left-2 md:left-10 bg-gray-800 text-white p-6 transform z-50"
-        >
+      {/* Navigation Sidebar */}
+      <div 
+        ref={navRef}
+        className={`fixed inset-y-0 left-0 z-40 w-80 max-w-full bg-gray-900/95 backdrop-blur-xl transition-all duration-500 transform ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full py-10 px-8">
+          {/* Logo */}
+          <div className="mb-16 pl-2">
+            <div className="flex items-center space-x-3 mb-12">
+              <img 
+                src={Logo} 
+                alt="Logo" 
+                className="w-12 h-12 rounded-full border-2 border-cyan-500 p-1" 
+              />
+              <div>
+                <h1 className="text-xl font-bold text-white">Dennis Bart-Plange</h1>
+                <p className="text-cyan-400 text-sm">Software Developer</p>
+              </div>
+            </div>
+            
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+          </div>
+
           {/* Navigation Items */}
-          <div className="flex flex-col">
-            <Link to="/" className="mb-4 text-md">
-              <FontAwesomeIcon icon={faHome} className="mr-2" />
-              Home
-            </Link>
-            <Link to="/portfolio" className="mb-4 text-md">
-              <FontAwesomeIcon icon={faUser} className="mr-2" />
-              Work
-            </Link>
-            <a href="./Dennis_Bart-Plange_resume.pdf" download className="mb-4 text-md">
-              <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
-              Resume
-            </a>
-            <a href="#contact" className="text-md">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-              Contact
-            </a>
+          <nav className="flex-1">
+            <ul className="space-y-4">
+              <NavItem 
+                to="/" 
+                icon={faHome} 
+                label="Home" 
+                isActive={activeLink === '/'}
+                onClick={() => setActiveLink('/')}
+              />
+              <NavItem 
+                to="/portfolio" 
+                icon={faBriefcase} 
+                label="Work" 
+                isActive={activeLink === '/portfolio'}
+                onClick={() => setActiveLink('/portfolio')}
+              />
+              <NavItem 
+                to="/about" 
+                icon={faUser} 
+                label="About" 
+                isActive={activeLink === '/about'}
+                onClick={() => setActiveLink('/about')}
+              />
+              <NavItem 
+                to="/skills" 
+                icon={faLightbulb} 
+                label="Skills" 
+                isActive={activeLink === '/skills'}
+                onClick={() => setActiveLink('/skills')}
+              />
+              <NavItem 
+                href="./Dennis_Bart-Plange_resume.pdf" 
+                icon={faFileAlt} 
+                label="Resume" 
+                download
+              />
+              <NavItem 
+                to="#contact" 
+                icon={faEnvelope} 
+                label="Contact" 
+              />
+            </ul>
+          </nav>
+
+          {/* Social Links */}
+          <div className="mt-auto pt-10">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
+            <div className="flex justify-center space-x-6">
+              <a 
+                href="https://github.com/Bart-Plange" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faGithub} className="text-xl" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/dennis-bart-plange-a5b0a1219" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} className="text-xl" />
+              </a>
+              <a 
+                href="mailto:bartplangedennis@gmail.com" 
+                className="social-icon"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
+              </a>
+            </div>
+            <p className="text-center text-gray-500 text-sm mt-6">
+              © {new Date().getFullYear()} Dennis Bart-Plange
+            </p>
           </div>
         </div>
-      )}
+      </div>
 
-      {/* Mobile Navigation */}
-      {isMobileView && (
-        <nav ref={mobileMenuRef} className="bg-gray-800 p-4 pt-12 overflow-hidden">
-          <ul className="flex flex-col space-y-2 pt-4 pl-10">
-            <li>
-              <a href="/" className="text-white block px-2 py-1">
-                <FontAwesomeIcon icon={faHome} className="mr-2" />
-                Home</a>
-            </li>
-            <li>
-              <a href="/porfolio" className="text-white block px-2 py-1">
-                <FontAwesomeIcon icon={faUser} className="mr-2" />
-                Work</a>
-            </li>
-            <li>
-              <a href="./Dennis_Bart-Plange_resume.pdf" download className="text-white block px-2 py-1">
-                <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
-                Resume</a>
-            </li>
-            <li>
-              <a href="#contact" className="text-white block px-2 py-1">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-              Contact</a>
-            </li>
-          </ul>
-        </nav>
+      {/* Background overlay */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm transition-opacity"
+          onClick={() => setMenuOpen(false)}
+        />
       )}
+    </>
+  );
+};
+
+// Navigation Item Component
+const NavItem = ({ to, href, icon, label, isActive = false, download, onClick }) => {
+  const content = (
+    <div className={`flex items-center px-4 py-3 rounded-xl transition-all duration-300 ${
+      isActive 
+        ? 'bg-cyan-500/10 border-l-4 border-cyan-500 text-cyan-400' 
+        : 'text-gray-400 hover:bg-gray-800 hover:text-white'
+    }`}>
+      <div className="w-8 flex justify-center">
+        <FontAwesomeIcon icon={icon} />
+      </div>
+      <span className="ml-4 font-medium">{label}</span>
     </div>
   );
+
+  if (to) {
+    return (
+      <li onClick={onClick}>
+        <Link to={to} className="block">
+          {content}
+        </Link>
+      </li>
+    );
+  }
+
+  if (href) {
+    return (
+      <li>
+        <a 
+          href={href} 
+          download={download}
+          className="block"
+        >
+          {content}
+        </a>
+      </li>
+    );
+  }
+
+  return <li>{content}</li>;
 };
 
 export default Navigation;
