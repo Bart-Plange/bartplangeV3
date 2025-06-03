@@ -35,15 +35,15 @@ const Footer = () => {
             </div>
             
             <div className={`transition-all duration-1000 ease-out transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center lg:text-left mb-6">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center lg:text-left mb-6 text-gray-400">
                 Let's build <span className="text-cyan-400">something</span>
                 <br />
-                <span className="text-orange-500">amazing</span> together
+                <span className="text-orange-400">amazing</span> together
               </h2>
               
               <a 
                 href="mailto:bartplangedennis@gmail.com" 
-                className="email-link inline-flex items-center text-lg md:text-xl py-3 px-6 rounded-full group"
+                className="email-link inline-flex items-center text-lg md:text-xl py-3 px-6 rounded-full group text-white"
               >
                 <span className="mr-3">bartplangedennis@gmail.com</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">

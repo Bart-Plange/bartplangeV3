@@ -5,7 +5,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
 
   return (
-    <section className="about-section min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 relative overflow-hidden">
+    <section className="about-section min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 relative overflow-hidden py-8">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <div className="grid-lines"></div>
@@ -15,7 +15,7 @@ const About = () => {
       </div>
       
       <div className="container mx-auto px-4 py-24 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-6">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             About <span className="text-cyan-400">Me</span>
           </h2>

@@ -37,7 +37,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact-section min-h-screen relative overflow-hidden" id="contact">
+    <section className="contact-section min-h-screen relative overflow-hidden py-8" id="contact">
       {/* Decorative background elements */}
       <div className="absolute inset-0 z-0">
         <div className="bg-grid"></div>
@@ -77,7 +77,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Full name"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                     required
                   />
@@ -100,7 +100,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="name@gmail.com"
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                     required
                   />

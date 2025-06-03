@@ -1,7 +1,7 @@
-/* hero.css */
-/* 3D Background Styles (keep your existing) */
+/* Enhanced 3D Background Styles */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -9,7 +9,7 @@
   }
 }
 
-/* Text Animation */
+/* Text Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -21,13 +21,32 @@
   }
 }
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 1s ease-out forwards;
 }
 
-/* Scroll Indicator */
+.animate-slide-in {
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* Scroll Indicator Animations */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0) translateX(-50%);
   }
   40% {
@@ -67,7 +86,7 @@ h2 {
   line-height: 1.2;
 }
 
-/* Gradient Text Effect */
+/* Optional Gradient Text Effect */
 .text-gradient {
   background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
   -webkit-background-clip: text;
@@ -75,7 +94,7 @@ h2 {
   color: transparent;
 }
 
-/* Button Hover Effect */
+/* Enhanced Button Hover Effect */
 .hover-effect {
   position: relative;
   overflow: hidden;
@@ -104,7 +123,7 @@ h2 {
   h1 {
     font-size: 3.5rem;
   }
-  
+
   h2 {
     font-size: 2.5rem;
   }
