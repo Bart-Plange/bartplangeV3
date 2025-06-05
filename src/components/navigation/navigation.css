@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 
-.hamburger span {
+.hamburger-line {
   display: block;
   height: 3px;
   width: 100%;
@@ -71,15 +71,15 @@
   transition: all 0.3s ease;
 }
 
-.hamburger.open span:nth-child(1) {
+.hamburger.open .hamburger-line:nth-child(1) {
   transform: translateY(8.5px) rotate(45deg);
 }
 
-.hamburger.open span:nth-child(2) {
+.hamburger.open .hamburger-line:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.open span:nth-child(3) {
+.hamburger.open .hamburger-line:nth-child(3) {
   transform: translateY(-8.5px) rotate(-45deg);
 }
 
@@ -90,8 +90,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
   z-index: 40;
   opacity: 0;
   visibility: hidden;
@@ -110,7 +110,7 @@
   width: 280px;
   height: 100%;
   background: #111827;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 50;
@@ -123,13 +123,13 @@
 }
 
 .mobile-nav .nav-link {
-  display: block;
-  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
   font-size: 1.1rem;
   color: #cbd5e1;
   transition: all 0.3s ease;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mobile-nav .nav-link:hover {
@@ -148,18 +148,19 @@
 
 .mobile-nav .active-indicator {
   top: 50%;
-  right: 20px;
+  right: 24px;
   transform: translateY(-50%);
 }
 
-/* Resume button hover effect */
-a[download] {
+/* Resume button */
+.resume-btn {
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
+  background: transparent;
 }
 
-a[download]::before {
+.resume-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -171,8 +172,19 @@ a[download]::before {
   transition: transform 0.6s ease;
 }
 
-a[download]:hover::before {
+.resume-btn:hover {
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.resume-btn:hover::before {
   transform: translateX(100%);
+}
+
+/* Close button position */
+.mobile-menu-overlay.open + .container .hamburger {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
 }
 
 /* Responsive adjustments */
@@ -180,74 +192,38 @@ a[download]:hover::before {
   .navbar {
     height: 56px;
   }
+  
+  .mobile-nav {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .mobile-nav .nav-link {
+    padding: 16px 24px;
+    font-size: 1.2rem;
+  }
 }
 
-/* navigation.css */
-/* ... (keep all previous styles) */
+/* Animation for mobile menu items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-/* Fixed mobile menu styles */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-  z-index: 40;
+.mobile-nav.open .nav-link {
+  animation: slideIn 0.4s ease-out forwards;
+  animation-delay: calc(var(--order) * 0.1s);
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.mobile-menu-overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 280px;
-  height: 100%;
-  background: #111827;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 50;
-  padding-top: 80px;
-  overflow-y: auto;
-}
-
-.mobile-nav.open {
-  transform: translateX(0);
-}
-
-/* Ensure mobile nav content is visible */
-.mobile-nav .nav-link {
-  display: block;
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  color: #cbd5e1;
-  transition: all 0.3s ease;
-  position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.mobile-nav .nav-link:hover {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.05);
-}
-
-.mobile-nav .nav-link.active {
-  color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.1);
-}
-
-/* Fix for close button behavior */
-button[aria-expanded="true"] {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-}
+.mobile-nav.open .nav-link:nth-child(1) { --order: 1; }
+.mobile-nav.open .nav-link:nth-child(2) { --order: 2; }
+.mobile-nav.open .nav-link:nth-child(3) { --order: 3; }
+.mobile-nav.open .nav-link:nth-child(4) { --order: 4; }
+.mobile-nav.open .resume-btn { --order: 5; }

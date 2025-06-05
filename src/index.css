@@ -14,14 +14,15 @@
         padding: 0 5%;
     }
 }
-.playwrite-be-wal h1 {
+/* .playwrite-be-wal {
         font-family: "Playwrite BE WAL", cursive;
         font-optical-sizing: auto;
         font-weight: weight;
         font-style: normal;
-    }
-h2, p{
+    } */
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
 }
 
 body{

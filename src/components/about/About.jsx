@@ -21,7 +21,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-cyan-500 mx-auto mb-6"></div>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Transforming ideas into digital experiences through code and creativity
+            Transforming ideas into digital experiences through code, education, and entrepreneurship
           </p>
         </div>
 
@@ -52,15 +52,15 @@ const About = () => {
           {/* Content */}
           <div className="text-white">
             <h3 className="text-3xl font-bold mb-6">
-              Software Developer & IT Instructor
+              Software Developer & IT Educator
             </h3>
             
             <p className="text-gray-300 mb-8 leading-relaxed">
-              With over 6 years of experience in both software development and IT education, I've dedicated my career to creating impactful digital solutions while empowering the next generation of tech professionals. My journey has taken me from administrative roles to department leadership, always with a focus on leveraging technology to solve real-world problems.
+              With many years of experience in software development and IT education, I've dedicated my career to creating impactful digital solutions while empowering the next generation of tech professionals. My journey began at St. John's Grammar Senior High School in Accra and continued at the Accra Institute of Technology, where I cultivated my passion for technology and education. As an IT specialist and educator, I've served as Administrator and Department Head at a non-governmental organization, leading teams to integrate technology solutions into community projects.
             </p>
             
             <p className="text-gray-300 mb-10 leading-relaxed">
-              I specialize in building responsive, user-friendly applications that bridge the gap between complex technical requirements and intuitive user experiences. My passion lies in transforming abstract concepts into tangible digital products that make a difference.
+              Beyond technology, I founded Elyndor Properties, a Ghanaian real estate marketplace where I've developed strategic market growth initiatives for over 15 years. I'm also deeply committed to community engagement, organizing initiatives like the Healing Jesus Campaigns in Kwame Danso. My portfolio of work is available at dennisbart.netlify.app, and I actively share projects through my GitHub profile with 60+ followers.
             </p>
             
             {/* Tabbed Content */}
@@ -94,7 +94,7 @@ const About = () => {
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
-                  My Approach
+                  Projects & Approach
                 </button>
               </div>
               
@@ -105,7 +105,7 @@ const About = () => {
                       <div>
                         <h4 className="text-lg font-bold text-cyan-400 mb-3">Technical Specialization</h4>
                         <ul className="space-y-3">
-                          {['Python', 'JavaScript', 'React', 'Node.js', 'HTML/CSS', 'Tailwind CSS'].map((skill) => (
+                          {['JavaScript (ES6+)', 'React.js', 'Express.js', 'HTML5/CSS3', 'Node.js', 'Git/GitHub'].map((skill) => (
                             <li key={skill} className="flex items-center">
                               <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
                               <span>{skill}</span>
@@ -114,9 +114,9 @@ const About = () => {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-cyan-400 mb-3">Development Focus</h4>
+                        <h4 className="text-lg font-bold text-cyan-400 mb-3">Professional Expertise</h4>
                         <ul className="space-y-3">
-                          {['Web Applications', 'Desktop Software', 'Responsive UI/UX', 'API Development', 'Database Design', 'Performance Optimization'].map((focus) => (
+                          {['Full-Stack Development', 'IT Curriculum Design', 'Team Leadership', 'Educational Technology', 'Real Estate Tech', 'Strategic Market Development'].map((focus) => (
                             <li key={focus} className="flex items-center">
                               <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
                               <span>{focus}</span>
@@ -128,7 +128,7 @@ const About = () => {
                     <div className="bg-gray-900/50 p-4 rounded-lg">
                       <h4 className="text-lg font-bold text-cyan-400 mb-2">Education & Instruction</h4>
                       <p className="text-gray-300">
-                        Over 6 years teaching programming and IT concepts at various educational institutions, developing curriculum and mentoring students.
+                        IT education specialist with many years developing curriculum and teaching programming concepts. My educational approach focuses on bridging theoretical knowledge with practical application in real-world projects :cite[5].
                       </p>
                     </div>
                   </div>
@@ -138,19 +138,19 @@ const About = () => {
                   <div className="space-y-6">
                     {[
                       { 
-                        title: "Software Developer & IT Instructor", 
+                        title: "Founder & CEO, Elyndor Properties", 
+                        period: "2009 - Present", 
+                        description: "Founded and lead a Ghanaian real estate marketplace with many years experience in strategic market development across Ghana. Spearheaded digital transformation initiatives in property management." 
+                      },
+                      { 
+                        title: "IT Educator & Administrator", 
+                        period: "2016 - 2021", 
+                        description: "Served as Department Head at a non-governmental organization for many years, leading technology integration into educational initiatives and managing cross-functional teams." 
+                      },
+                      { 
+                        title: "Software Developer & IT Tutor", 
                         period: "2018 - Present", 
-                        description: "Creating custom software solutions while teaching programming and IT concepts at various institutions." 
-                      },
-                      { 
-                        title: "Department Head", 
-                        period: "2016 - 2018", 
-                        description: "Led IT department operations, managed teams, and implemented technology strategies." 
-                      },
-                      { 
-                        title: "IT Administrator", 
-                        period: "2014 - 2016", 
-                        description: "Managed network infrastructure, implemented security protocols, and provided technical support." 
+                        description: "Develop full-stack applications while mentoring aspiring developers. Maintain active GitHub profile with 60+ followers and contribute to educational resources." 
                       }
                     ].map((job, index) => (
                       <div key={index} className="border-l-2 border-cyan-500 pl-4 py-1">
@@ -173,20 +173,14 @@ const About = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-lg mb-1">Problem-First Mindset</h4>
-                        <p className="text-gray-300">I begin every project by thoroughly understanding the core problem before writing any code.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="bg-cyan-500/20 p-3 rounded-full mr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg mb-1">Modular Architecture</h4>
-                        <p className="text-gray-300">Building scalable solutions with clean, maintainable code and well-defined components.</p>
+                        <h4 className="font-bold text-lg mb-1">Project Portfolio</h4>
+                        <p className="text-gray-300 mb-3">My GitHub showcases 29+ repositories including:</p>
+                        <ul className="text-gray-300 ml-5 list-disc space-y-1">
+                          <li>nyametease_perfectgrace_foundation</li>
+                          <li>rising-star-montessori</li>
+                          <li>portfolioV2</li>
+                        </ul>
+                        <p className="text-gray-300 mt-3">Explore my work at <span className="text-cyan-400">dennisbart.netlify.app</span></p>
                       </div>
                     </div>
                     
@@ -197,8 +191,8 @@ const About = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-bold text-lg mb-1">Collaborative Process</h4>
-                        <p className="text-gray-300">I believe the best results come from close collaboration with clients and stakeholders.</p>
+                        <h4 className="font-bold text-lg mb-1">Technical Philosophy</h4>
+                        <p className="text-gray-300">I combine modular architecture with user-centered design, creating scalable solutions with clean, maintainable code and intuitive interfaces. My teaching approach emphasizes practical application of theoretical concepts.</p>
                       </div>
                     </div>
                   </div>
