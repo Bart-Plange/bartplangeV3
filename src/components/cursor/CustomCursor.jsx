@@ -1,4 +1,3 @@
-// CustomCursor.jsx
 import { useEffect, useRef } from 'react';
 import './customCursor.css';
 
@@ -97,13 +96,16 @@ const CustomCursor = () => {
         className="custom-cursor" 
         style={{ 
           opacity: 0,
-          transition: 'opacity 0.3s ease, transform 0.1s linear'
+          transition: 'opacity 0.1s ease'
         }} 
       />
       <div 
         ref={followerRef} 
         className="cursor-follower" 
-        style={{ opacity: 0 }}
+        style={{ 
+          opacity: 0,
+          transition: 'opacity 0.1s ease'
+        }} 
       />
     </>
   );
