@@ -46,13 +46,13 @@ const HomePage = () => {
   };
 
   return (
-    <Layout>
+    <>
       <Hero ref={heroRef} />
       <Portfolio ref={portfolioRef} />
       <About ref={aboutRef} />
       <Contact ref={contactRef} />
       <Footer ref={ footerRef } />
-    </Layout>
+    </>
   );
 };
 

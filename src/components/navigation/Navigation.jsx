@@ -69,7 +69,7 @@ export default function Navigation() {
         ))}
         <li>
           <a
-            href="/resume.pdf"
+            href="/Dennis_Bart-Plange_resume.pdf"
             className="resume-btn"
             target="_blank"
             rel="noopener noreferrer"
