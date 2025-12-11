@@ -1,221 +1,206 @@
-import { useState } from 'react';
+import React from 'react';
 import './about.css';
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('skills');
-
   return (
-    <section className="about-section min-h-screen bg-gradient-to-br from-gray-900 to-gray-950 relative overflow-hidden py-8">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
-        <div className="grid-lines"></div>
-        <div className="glowing-dot dot-1"></div>
-        <div className="glowing-dot dot-2"></div>
-        <div className="glowing-dot dot-3"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 py-24 relative z-10">
-        <div className="text-center mb-16 mt-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About <span className="text-cyan-400">Me</span>
-          </h2>
-          <div className="w-24 h-1 bg-cyan-500 mx-auto mb-6"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Transforming ideas into digital experiences through code, education, and entrepreneurship
-          </p>
-        </div>
+    <section className="about-section min-h-screen bg-[#0a192f] text-slate-300 py-20 relative" id="about">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row gap-12">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Profile Image */}
-          <div className="relative">
-            <div className="profile-container mx-auto lg:mx-0">
-              <div className="profile-image bg-gray-800 rounded-full overflow-hidden relative">
-                <div className="image-placeholder bg-gradient-to-br from-cyan-800 to-gray-900 w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="bg-gray-800 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-white font-medium">Dennis Bart-Plange</span>
-                  </div>
-                </div>
-                <div className="absolute inset-0 border-2 border-cyan-500 rounded-full opacity-70 transform rotate-12 scale-105"></div>
-              </div>
-              
-              <div className="absolute -bottom-4 -right-4 bg-cyan-500 text-gray-900 px-4 py-2 rounded-lg font-bold">
-                <span className="animate-pulse">●</span> Available for work
-              </div>
+          {/* Left Column: Sticky Profile Card */}
+          <div className="lg:w-1/3 relative">
+            <div className="sticky top-24">
+              <ProfileCard />
             </div>
           </div>
 
-          {/* Content */}
-          <div className="text-white">
-            <h3 className="text-3xl font-bold mb-6">
-              Software Developer & IT Educator
-            </h3>
-            
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              With many years of experience in software development and IT education, I've dedicated my career to creating impactful digital solutions while empowering the next generation of tech professionals. My journey began at St. John's Grammar Senior High School in Accra and continued at the Accra Institute of Technology, where I cultivated my passion for technology and education. As an IT specialist and educator, I've served as Administrator and Department Head at a non-governmental organization, leading teams to integrate technology solutions into community projects.
-            </p>
-            
-            <p className="text-gray-300 mb-10 leading-relaxed">
-              Beyond technology, I founded Elyndor Properties, a Ghanaian real estate marketplace where I've developed strategic market growth initiatives for over 15 years. I'm also deeply committed to community engagement, organizing initiatives like the Healing Jesus Campaigns in Kwame Danso. My portfolio of work is available at dennisbart.netlify.app, and I actively share projects through my GitHub profile with 60+ followers.
-            </p>
-            
-            {/* Tabbed Content */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden">
-              <div className="flex border-b border-gray-700">
-                <button 
-                  onClick={() => setActiveTab('skills')}
-                  className={`px-6 py-4 font-medium transition-colors ${
-                    activeTab === 'skills' 
-                      ? 'text-cyan-400 border-b-2 border-cyan-400' 
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Skills & Expertise
-                </button>
-                <button 
-                  onClick={() => setActiveTab('experience')}
-                  className={`px-6 py-4 font-medium transition-colors ${
-                    activeTab === 'experience' 
-                      ? 'text-cyan-400 border-b-2 border-cyan-400' 
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Experience
-                </button>
-                <button 
-                  onClick={() => setActiveTab('approach')}
-                  className={`px-6 py-4 font-medium transition-colors ${
-                    activeTab === 'approach' 
-                      ? 'text-cyan-400 border-b-2 border-cyan-400' 
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Projects & Approach
-                </button>
-              </div>
-              
-              <div className="p-6">
-                {activeTab === 'skills' && (
-                  <div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <h4 className="text-lg font-bold text-cyan-400 mb-3">Technical Specialization</h4>
-                        <ul className="space-y-3">
-                          {['JavaScript (ES6+)', 'React.js', 'Express.js', 'HTML5/CSS3', 'Node.js', 'Git/GitHub'].map((skill) => (
-                            <li key={skill} className="flex items-center">
-                              <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
-                              <span>{skill}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-cyan-400 mb-3">Professional Expertise</h4>
-                        <ul className="space-y-3">
-                          {['Full-Stack Development', 'IT Curriculum Design', 'Team Leadership', 'Educational Technology', 'Real Estate Tech', 'Strategic Market Development'].map((focus) => (
-                            <li key={focus} className="flex items-center">
-                              <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
-                              <span>{focus}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="bg-gray-900/50 p-4 rounded-lg">
-                      <h4 className="text-lg font-bold text-cyan-400 mb-2">Education & Instruction</h4>
-                      <p className="text-gray-300">
-                        IT education specialist with many years developing curriculum and teaching programming concepts. My educational approach focuses on bridging theoretical knowledge with practical application in real-world projects :cite[5].
-                      </p>
-                    </div>
-                  </div>
-                )}
-                
-                {activeTab === 'experience' && (
-                  <div className="space-y-6">
-                    {[
-                      { 
-                        title: "Founder & CEO, Elyndor Properties", 
-                        period: "2009 - Present", 
-                        description: "Founded and lead a Ghanaian real estate marketplace with many years experience in strategic market development across Ghana. Spearheaded digital transformation initiatives in property management." 
-                      },
-                      { 
-                        title: "IT Educator & Administrator", 
-                        period: "2016 - 2021", 
-                        description: "Served as Department Head at a non-governmental organization for many years, leading technology integration into educational initiatives and managing cross-functional teams." 
-                      },
-                      { 
-                        title: "Software Developer & IT Tutor", 
-                        period: "2018 - Present", 
-                        description: "Develop full-stack applications while mentoring aspiring developers. Maintain active GitHub profile with 60+ followers and contribute to educational resources." 
-                      }
-                    ].map((job, index) => (
-                      <div key={index} className="border-l-2 border-cyan-500 pl-4 py-1">
-                        <div className="flex justify-between items-start">
-                          <h4 className="text-lg font-bold">{job.title}</h4>
-                          <span className="text-cyan-400 text-sm bg-gray-900 px-2 py-1 rounded">{job.period}</span>
-                        </div>
-                        <p className="text-gray-300 mt-2">{job.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                
-                {activeTab === 'approach' && (
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <div className="bg-cyan-500/20 p-3 rounded-full mr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg mb-1">Project Portfolio</h4>
-                        <p className="text-gray-300 mb-3">My GitHub showcases 29+ repositories including:</p>
-                        <ul className="text-gray-300 ml-5 list-disc space-y-1">
-                          <li>nyametease_perfectgrace_foundation</li>
-                          <li>rising-star-montessori</li>
-                          <li>portfolioV2</li>
-                        </ul>
-                        <p className="text-gray-300 mt-3">Explore my work at <span className="text-cyan-400">dennisbart.netlify.app</span></p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start">
-                      <div className="bg-cyan-500/20 p-3 rounded-full mr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-lg mb-1">Technical Philosophy</h4>
-                        <p className="text-gray-300">I combine modular architecture with user-centered design, creating scalable solutions with clean, maintainable code and intuitive interfaces. My teaching approach emphasizes practical application of theoretical concepts.</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-            
-            {/* Contact Button */}
-            <div className="mt-10">
-              <a 
-                href="#contact" 
-                className="contact-button inline-flex items-center px-8 py-4 rounded-full text-lg font-bold transition-all duration-300"
-              >
-                Let's Work Together
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-3" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
+          {/* Right Column: Content */}
+          <div className="lg:w-2/3">
+            <BioSection />
+            <TechStackSection />
+            <ExperienceSection />
           </div>
+
         </div>
       </div>
     </section>
+  );
+};
+
+const ProfileCard = () => {
+  return (
+    <div className="profile-card bg-[#112240] p-8 rounded-lg border border-cyan-900/30 shadow-xl">
+      <div className="relative w-48 h-48 mx-auto mb-6 group">
+        <div className="absolute inset-0 border-2 border-cyan-400 rounded-lg transform translate-x-4 translate-y-4 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+        <div className="absolute inset-0 bg-cyan-500/20 rounded-lg group-hover:bg-transparent transition-colors z-10"></div>
+        <div className="w-full h-full bg-gray-800 rounded-lg overflow-hidden relative z-0 grayscale group-hover:grayscale-0 transition-all duration-300">
+          {/* Placeholder for actual image or the existing SVG placeholder */}
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center">
+        <h3 className="text-2xl font-bold text-white mb-2">Dennis Bart-Plange</h3>
+        <p className="text-cyan-400 font-mono text-sm mb-6">Full Stack Developer</p>
+
+        <div className="flex justify-center space-x-4 mb-8">
+          <SocialLink href="https://github.com" icon="github" />
+          <SocialLink href="https://linkedin.com" icon="linkedin" />
+          <SocialLink href="mailto:contact@example.com" icon="mail" />
+        </div>
+
+        <a href="/resume.pdf" className="inline-block w-full py-3 px-6 border border-cyan-400 text-cyan-400 font-mono text-sm rounded hover:bg-cyan-400/10 transition-colors">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  );
+};
+
+const SocialLink = ({ href, icon }) => {
+  // Simple SVG icons mapping
+  const icons = {
+    github: <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />,
+    linkedin: <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />,
+    mail: <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-11.179l4.623 5.467zm2.157-1.149l-6.891-8.151h20.222l-6.891 8.151-3.22 3.809-3.22-3.809zm2.158 1.149l4.623-5.467v11.179l-4.623-5.712zm1.094 1.294l3.22 3.809 3.22-3.809 6.891 8.151h-20.222l6.891-8.151z" />
+  };
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+        {icons[icon]}
+      </svg>
+    </a>
+  );
+};
+
+const BioSection = () => {
+  return (
+    <div className="mb-16">
+      <div className="flex items-center mb-8">
+        <span className="text-cyan-400 font-mono text-xl mr-4">01.</span>
+        <h2 className="text-3xl font-bold text-white">About Me</h2>
+        <div className="h-[1px] bg-gray-700 flex-grow ml-6"></div>
+      </div>
+
+      <div className="prose prose-invert max-w-none text-slate-400">
+        <p className="mb-4">
+          Hello! My name is Dennis and I enjoy creating things that live on the internet. My interest in web development started back in 2016 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS was surprisingly fun!
+        </p>
+        <p className="mb-4">
+          Fast-forward to today, and I've had the privilege of working at an <span className="text-cyan-400">educational NGO</span>, a <span className="text-cyan-400">start-up</span>, and founding my own <span className="text-cyan-400">real estate platform</span>. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
+        </p>
+        <p>
+          I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const TechStackSection = () => {
+  const skills = {
+    "Languages": ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3/Sass", "Python", "SQL"],
+    "Frameworks": ["React", "Next.js", "Node.js", "Express", "Tailwind CSS", "React Native"],
+    "Tools": ["Git & GitHub", "Docker", "AWS", "Firebase", "MongoDB", "PostgreSQL"]
+  };
+
+  return (
+    <div className="mb-16">
+      <div className="flex items-center mb-8">
+        <span className="text-cyan-400 font-mono text-xl mr-4">02.</span>
+        <h2 className="text-3xl font-bold text-white">Tech Stack</h2>
+        <div className="h-[1px] bg-gray-700 flex-grow ml-6"></div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {Object.entries(skills).map(([category, items]) => (
+          <div key={category} className="bg-[#112240] p-6 rounded-lg hover:translate-y-[-5px] transition-transform duration-300">
+            <h3 className="text-cyan-400 font-mono mb-4 text-lg">{category}</h3>
+            <ul className="space-y-2">
+              {items.map(skill => (
+                <li key={skill} className="flex items-center text-sm">
+                  <span className="text-cyan-400 mr-2">▹</span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ExperienceSection = () => {
+  const experiences = [
+    {
+      role: "Founder & CEO",
+      company: "Elyndor Properties",
+      period: "2009 - Present",
+      description: [
+        "Founded and lead a Ghanaian real estate marketplace with over 15 years of experience in strategic market development.",
+        "Spearheaded digital transformation initiatives, building the platform from ground up using modern web technologies.",
+        "Managed cross-functional teams and implemented data-driven strategies to grow the user base."
+      ]
+    },
+    {
+      role: "Software Developer & IT Tutor",
+      company: "Freelance / Education",
+      period: "2018 - Present",
+      description: [
+        "Develop full-stack applications for diverse clients while mentoring aspiring developers.",
+        "Created and taught curriculum on modern web development (React, Node.js) to over 50+ students.",
+        "Maintain active open-source contributions and educational resources on GitHub."
+      ]
+    },
+    {
+      role: "IT Educator & Administrator",
+      company: "Non-Governmental Organization",
+      period: "2016 - 2021",
+      description: [
+        "Served as Department Head, leading technology integration into educational initiatives.",
+        "Managed IT infrastructure and provided technical support for the organization.",
+        "Collaborated with stakeholders to deliver impactful community projects."
+      ]
+    }
+  ];
+
+  return (
+    <div>
+      <div className="flex items-center mb-8">
+        <span className="text-cyan-400 font-mono text-xl mr-4">03.</span>
+        <h2 className="text-3xl font-bold text-white">Where I've Worked</h2>
+        <div className="h-[1px] bg-gray-700 flex-grow ml-6"></div>
+      </div>
+
+      <div className="space-y-12 border-l-2 border-gray-800 ml-3 pl-8 relative">
+        {experiences.map((exp, index) => (
+          <div key={index} className="relative">
+            {/* Timeline Dot */}
+            <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full border-2 border-cyan-400 bg-[#0a192f]"></div>
+
+            <h3 className="text-xl font-bold text-white mb-1">
+              {exp.role} <span className="text-cyan-400">@ {exp.company}</span>
+            </h3>
+            <p className="font-mono text-sm text-slate-400 mb-4">{exp.period}</p>
+
+            <ul className="space-y-3">
+              {exp.description.map((item, i) => (
+                <li key={i} className="flex items-start text-slate-400 text-sm">
+                  <span className="text-cyan-400 mr-2 mt-1">▹</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

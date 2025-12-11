@@ -1,9 +1,11 @@
-import {Work } from "../components";
+import { Work } from "../components";
+import Footer from "../components/footer/Footer";
 
 const PortfolioPage = () => {
     return (
-        <section >  
+        <section>
             <Work />
+            <Footer />
         </section>
     )
 };

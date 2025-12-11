@@ -18,6 +18,12 @@ const CustomCursor = () => {
 
     const handleMouseMove = (e) => {
       targetPosRef.current = { x: e.clientX, y: e.clientY };
+
+      // Ensure cursor is visible when mouse moves
+      if (cursorRef.current && cursorRef.current.style.opacity !== '1') {
+        cursorRef.current.style.opacity = '1';
+        if (followerRef.current) followerRef.current.style.opacity = '0.7';
+      }
     };
 
     const handleHover = () => {
@@ -50,62 +56,62 @@ const CustomCursor = () => {
       if (previousTimeRef.current !== undefined) {
         // Smooth movement with easing
         const delta = Math.min((time - previousTimeRef.current) / 16, 2.5);
-        
+
         // Main cursor movement
         posRef.current.x += (targetPosRef.current.x - posRef.current.x) * 0.15 * delta;
         posRef.current.y += (targetPosRef.current.y - posRef.current.y) * 0.15 * delta;
-        
+
         // Scale transition
         scaleRef.current += (targetScaleRef.current - scaleRef.current) * 0.15 * delta;
-        
+
         // Apply transformations
         if (cursorRef.current) {
           cursorRef.current.style.transform = `translate(${posRef.current.x}px, ${posRef.current.y}px) scale(${scaleRef.current})`;
         }
-        
+
         // Follower movement with delay
         if (followerRef.current) {
           followerRef.current.style.transform = `translate(${targetPosRef.current.x}px, ${targetPosRef.current.y}px)`;
         }
       }
-      
+
       previousTimeRef.current = time;
       requestRef.current = requestAnimationFrame(animate);
     };
-    
+
     requestRef.current = requestAnimationFrame(animate);
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseenter', handleHover);
       document.removeEventListener('mouseleave', handleLeave);
-      
+
       hoverableElements.forEach(el => {
         el.removeEventListener('mouseenter', handleHover);
         el.removeEventListener('mouseleave', handleLeave);
       });
-      
+
       cancelAnimationFrame(requestRef.current);
     };
   }, []);
 
   return (
     <>
-      <div 
-        ref={cursorRef} 
-        className="custom-cursor" 
-        style={{ 
+      <div
+        ref={cursorRef}
+        className="custom-cursor"
+        style={{
           opacity: 0,
           transition: 'opacity 0.1s ease'
-        }} 
+        }}
       />
-      <div 
-        ref={followerRef} 
-        className="cursor-follower" 
-        style={{ 
+      <div
+        ref={followerRef}
+        className="cursor-follower"
+        style={{
           opacity: 0,
           transition: 'opacity 0.1s ease'
-        }} 
+        }}
       />
     </>
   );

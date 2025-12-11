@@ -1,4 +1,5 @@
 import { useRef, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import "./navigation.css";
 // Import your logo image (adjust the path according to your project structure)
@@ -23,7 +24,7 @@ export default function Navigation() {
         duration: 0.7,
         ease: "power3.out",
       });
-      
+
       gsap.from(".nav-link", {
         y: -30,
         opacity: 0,
@@ -47,11 +48,13 @@ export default function Navigation() {
     <nav className="navbar" ref={navRef}>
       <div className="logo">
         {/* Replaced text logo with image */}
-        <img 
-          src={logoImage} 
-          alt="Site Logo" 
-          className="logo-img"
-        />
+        <Link to="/">
+          <img
+            src={logoImage}
+            alt="Site Logo"
+            className="logo-img"
+          />
+        </Link>
       </div>
       <input type="checkbox" id="nav-toggle" className="nav-toggle" />
       <label htmlFor="nav-toggle" className="nav-toggle-label">
@@ -62,9 +65,9 @@ export default function Navigation() {
       <ul className="nav-links">
         {navLinks.map((link) => (
           <li key={link.id}>
-            <a className="nav-link" href={`#${link.label.toLowerCase()}`}>
+            <Link className="nav-link" to={`/${link.label.toLowerCase() === 'work' ? 'work' : link.label.toLowerCase()}`}>
               <span className="nav-index">{link.id}.</span> {link.label}
-            </a>
+            </Link>
           </li>
         ))}
         <li>

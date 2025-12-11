@@ -5,37 +5,43 @@
 @tailwind components;
 @tailwind utilities;
 
-.container{
-    padding: 5% 15%;
+.container {
+  padding: 5% 15%;
 }
 
-@media (max-width: 500px){
-    .container{
-        padding: 0 5%;
-    }
+@media (max-width: 500px) {
+  .container {
+    padding: 0 5%;
+  }
 }
+
 /* .playwrite-be-wal {
         font-family: "Playwrite BE WAL", cursive;
         font-optical-sizing: auto;
         font-weight: weight;
         font-style: normal;
     } */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.05em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.05em;
 }
 
-body{
-    cursor: none;
-    overflow: auto;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-y: scroll;
+body {
+  cursor: none;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* customCursor.css */
@@ -49,10 +55,10 @@ body::-webkit-scrollbar {
   background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
   box-shadow: 0 0 15px rgba(139, 92, 246, 0.7);
   pointer-events: none;
-  z-index: 10000;
+  z-index: 99999;
   transform: translate(0, 0) scale(1);
-  transition: 
-    transform 0.15s ease-out, 
+  transition:
+    transform 0.15s ease-out,
     background 0.3s ease,
     width 0.3s ease,
     height 0.3s ease;
@@ -76,18 +82,18 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.7);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99998;
   transform: translate(0, 0);
-  transition: 
+  transition:
     opacity 0.3s ease,
     transform 0.1s linear;
   will-change: transform;
 }
 
 /* Hover states for interactive elements */
-a:hover ~ .custom-cursor,
-button:hover ~ .custom-cursor,
-.hoverable:hover ~ .custom-cursor {
+a:hover~.custom-cursor,
+button:hover~.custom-cursor,
+.hoverable:hover~.custom-cursor {
   transform: scale(1.8);
   background: linear-gradient(135deg, #f97316, #ef4444);
   width: 15px;
@@ -103,9 +109,11 @@ button:hover ~ .custom-cursor,
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(0.5);
   }
+
   100% {
     transform: scale(1);
   }
@@ -113,7 +121,9 @@ button:hover ~ .custom-cursor,
 
 /* Tablet and mobile devices */
 @media (hover: none) {
-  .custom-cursor, .cursor-follower {
+
+  .custom-cursor,
+  .cursor-follower {
     display: none;
   }
 }
